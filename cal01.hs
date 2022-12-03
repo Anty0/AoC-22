@@ -1,7 +1,6 @@
 #!/usr/bin/env runhaskell
 
 import System.IO  
-import Control.Monad
 import Data.List (sort)
 import Data.List.Split (splitOn)
 
@@ -18,7 +17,7 @@ sumBlocks blocks = reverse $ sort $ map (sum.map read) blocks
 
 main = do
     -- Reading file
-    handle <- openFile "cal1-1.test.txt" ReadMode
+    handle <- openFile "cal01-1.test.txt" ReadMode
     contents <- hGetContents handle
 
     -- Main logic

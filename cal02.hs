@@ -1,8 +1,6 @@
 #!/usr/bin/env runhaskell
 
-import System.IO  
-import Control.Monad
-import Data.List (sort)
+import System.IO
 import Data.List.Split (splitOn)
 
 -- Score of played character
@@ -61,13 +59,11 @@ roundScore g@(a, x) = charScore x + compareScore g
 
 main = do
     -- Reading file
-    handle <- openFile "cal2-1.orig.txt" ReadMode
+    handle <- openFile "cal02-1.test.txt" ReadMode
     contents <- hGetContents handle
 
     -- Main logic
     let rounds = splitRounds contents
-        -- Debug score
-        -- score_map = map (\g@(a, x) -> (a, x, roundScore g)) rounds
         -- Part #1 - score form input
         score_part1 = sum $ map (roundScore) rounds
         -- Part #2 - transformed score form input
@@ -75,7 +71,6 @@ main = do
     
     -- Output handling
     -- print rounds
-    -- mapM (print) score_map
     print score_part1
     print score_part2
 
