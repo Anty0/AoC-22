@@ -7,7 +7,7 @@ import Data.List.Split (splitOn)
 
 -- Split into blocks by empty lines
 splitBlocks :: String -> [[String]]
-splitBlocks fileContents = splitOn [""] $ splitOn "\n" fileContents
+splitBlocks fileContents = splitOn [""] $ lines fileContents
 
 
 -- Sum blocks as ints and sort them
@@ -22,15 +22,15 @@ main = do
 
     -- Main logic
     let blocks = splitBlocks contents
-        blocks_sum = sumBlocks blocks
+        blocksSum = sumBlocks blocks
         -- Part #1 - top block
-        blocks_max_1 = blocks_sum !! 0
+        blocksMax_part1 = head blocksSum
         -- Part #2 - sum of 3 top blocks
-        blocks_max_2 = sum $ take 3 blocks_sum
+        blocksMax_part2 = sum $ take 3 blocksSum
     
     -- Output handling
-    print blocks_max_1
-    print blocks_max_2
+    print blocksMax_part1
+    print blocksMax_part2
 
     -- Closing file
     hClose handle

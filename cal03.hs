@@ -3,12 +3,12 @@
 import System.IO
 import Data.Char (ord)
 import Data.List (intersect)
-import Data.List.Split (splitOn, chunksOf)
+import Data.List.Split (chunksOf)
 
 
 -- Split list into two halves
 halveList :: [a] -> ([a], [a])
-halveList l = (take len l, drop len l)
+halveList l = splitAt len l
     where len = (length l) `div` 2
 
 -- Calculate score of item
@@ -19,7 +19,7 @@ itemScore c
 
 -- Split input into rucksacks
 splitRucksacks :: String -> [String]
-splitRucksacks fileContents = filter (/= "") $ splitOn "\n" fileContents
+splitRucksacks fileContents = lines fileContents
 
 -- Calculate rucksack intersection
 intersectRucksack :: String -> String
@@ -49,16 +49,16 @@ main = do
     -- Main logic
     let rucksacks = splitRucksacks contents
         -- Teams of three rucksacks
-        rucksacks_teams = chunksOf 3 rucksacks
+        rucksacksTeams = chunksOf 3 rucksacks
         -- Part #1 - score for each rucksack
-        rucksacks_score_part1 = sum $ map (scoreRucksack) rucksacks
+        rucksacksScore_part1 = sum $ map (scoreRucksack) rucksacks
         -- Part #2 - score for each team
-        rucksacks_score_part2 = sum $ map (scoreTeam) rucksacks_teams
+        rucksacksScore_part2 = sum $ map (scoreTeam) rucksacksTeams
 
     -- Output handling
     -- print rucksacks
-    print rucksacks_score_part1
-    print rucksacks_score_part2
+    print rucksacksScore_part1
+    print rucksacksScore_part2
 
     -- Closing file
     hClose handle
