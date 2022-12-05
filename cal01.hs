@@ -17,8 +17,8 @@ sumBlocks blocks = reverse $ sort $ map (sum.map read) blocks
 
 main = do
     -- Reading file
-    handle <- openFile "cal01-1.test.txt" ReadMode
-    contents <- hGetContents handle
+    contents <- readFile "cal01-1.test.txt"
+    -- contents <- readFile "cal01-1.orig.txt"
 
     -- Main logic
     let blocks = splitBlocks contents
@@ -31,6 +31,3 @@ main = do
     -- Output handling
     print blocksMax_part1
     print blocksMax_part2
-
-    -- Closing file
-    hClose handle

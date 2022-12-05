@@ -28,20 +28,17 @@ overlappingAssignmentPair ((xs,xe),(ys,ye)) = not $ null $ intersect x y
 
 main = do
     -- Reading file
-    handle <- openFile "cal04-1.test.txt" ReadMode
-    contents <- hGetContents handle
+    contents <- readFile "cal04-1.test.txt"
+    -- contents <- readFile "cal04-1.orig.txt"
 
     -- Main logic
     let assignmentPairs = splitAssignmentPairs contents :: [AssignmentPair Int]
         -- Part #1 - completely overlapping assignment pairs
-        redundantAssignmentPairs_part1 = sum $ map (bool 0 1.redundantAssignmentPair) assignmentPairs
+        redundantAssignmentPairs_part1 = length $ filter (redundantAssignmentPair) assignmentPairs
         -- Part #2 - completely and partially overlapping assignment pairs
-        overlappingAssignmentPairs_part2 = sum $ map (bool 0 1.overlappingAssignmentPair) assignmentPairs
+        overlappingAssignmentPairs_part2 = length $ filter (overlappingAssignmentPair) assignmentPairs
 
     -- Output handling
     -- print assignmentPairs
     print redundantAssignmentPairs_part1
     print overlappingAssignmentPairs_part2
-
-    -- Closing file
-    hClose handle

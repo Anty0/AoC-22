@@ -43,8 +43,8 @@ scoreTeam team = itemScore $ head $ intersectTeam team
 
 main = do
     -- Reading file
-    handle <- openFile "cal03-1.test.txt" ReadMode
-    contents <- hGetContents handle
+    contents <- readFile "cal03-1.test.txt"
+    -- contents <- readFile "cal03-1.orig.txt"
 
     -- Main logic
     let rucksacks = splitRucksacks contents
@@ -59,6 +59,3 @@ main = do
     -- print rucksacks
     print rucksacksScore_part1
     print rucksacksScore_part2
-
-    -- Closing file
-    hClose handle

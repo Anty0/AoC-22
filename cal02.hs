@@ -59,8 +59,8 @@ roundScore g@(a, x) = charScore x + compareScore g
 
 main = do
     -- Reading file
-    handle <- openFile "cal02-1.test.txt" ReadMode
-    contents <- hGetContents handle
+    contents <- readFile "cal02-1.test.txt"
+    -- contents <- readFile "cal02-1.orig.txt"
 
     -- Main logic
     let rounds = splitRounds contents
@@ -73,6 +73,3 @@ main = do
     -- print rounds
     print score_part1
     print score_part2
-
-    -- Closing file
-    hClose handle
