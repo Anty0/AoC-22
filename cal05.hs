@@ -71,7 +71,7 @@ apply stacks ((n,x,y):xc) = apply newStacks xc
     where newStacks = applyAt y (takeAt x n stacks ++) $ applyAt x (drop n) stacks
 
 -- Parse input, apply commands to stacks, get stacks header
-result :: String -> Bool -> [Char]
+result :: String -> Bool -> String
 result input singleStep = header $ uncurry (apply) $ parse input singleStep
 
 main = do
