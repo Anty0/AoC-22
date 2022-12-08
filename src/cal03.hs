@@ -43,8 +43,8 @@ scoreTeam team = itemScore $ head $ intersectTeam team
 
 main = do
     -- Reading file
-    contents <- readFile "cal03-1.test.txt"
-    -- contents <- readFile "cal03-1.orig.txt"
+    contents <- readFile "./data/cal03-1.test.txt" -- 157 | 70
+    -- contents <- readFile "./data/cal03-1.orig.txt"
 
     -- Main logic
     let rucksacks = splitRucksacks contents

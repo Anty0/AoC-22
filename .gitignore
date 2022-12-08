@@ -1,2 +1,6 @@
 # Input files specific to each participant
 *.orig.txt
+
+# Build dirs
+/build
+/out

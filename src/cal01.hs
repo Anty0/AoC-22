@@ -17,8 +17,8 @@ sumBlocks blocks = reverse $ sort $ map (sum.map read) blocks
 
 main = do
     -- Reading file
-    contents <- readFile "cal01-1.test.txt"
-    -- contents <- readFile "cal01-1.orig.txt"
+    contents <- readFile "./data/cal01-1.test.txt" -- 24000 | 45000
+    -- contents <- readFile "./data/cal01-1.orig.txt"
 
     -- Main logic
     let blocks = splitBlocks contents

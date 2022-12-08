@@ -59,8 +59,8 @@ roundScore g@(a, x) = charScore x + compareScore g
 
 main = do
     -- Reading file
-    contents <- readFile "cal02-1.test.txt"
-    -- contents <- readFile "cal02-1.orig.txt"
+    contents <- readFile "./data/cal02-1.test.txt" -- 15 | 12
+    -- contents <- readFile "./data/cal02-1.orig.txt"
 
     -- Main logic
     let rounds = splitRounds contents

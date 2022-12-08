@@ -76,8 +76,8 @@ result input singleStep = header $ uncurry (apply) $ parse input singleStep
 
 main = do
     -- Reading file
-    contents <- readFile "cal05-1.test.txt"
-    -- contents <- readFile "cal05-1.orig.txt"
+    contents <- readFile "./data/cal05-1.test.txt" -- CMZ | MCD
+    -- contents <- readFile "./data/cal05-1.orig.txt"
 
     -- Part #1 - heads of stacks, commands executed element by element
     print $ result contents True

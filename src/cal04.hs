@@ -28,8 +28,8 @@ overlappingAssignmentPair ((xs,xe),(ys,ye)) = not $ null $ intersect x y
 
 main = do
     -- Reading file
-    contents <- readFile "cal04-1.test.txt"
-    -- contents <- readFile "cal04-1.orig.txt"
+    contents <- readFile "./data/cal04-1.test.txt" -- 2 | 4
+    -- contents <- readFile "./data/cal04-1.orig.txt"
 
     -- Main logic
     let assignmentPairs = splitAssignmentPairs contents :: [AssignmentPair Int]

@@ -35,9 +35,9 @@ printResult file = do
 
 main = do
     -- Calculate and print result for each test file
-    printResult "cal06-1.test.txt" -- 7 19
-    printResult "cal06-2.test.txt" -- 5 23
-    printResult "cal06-3.test.txt" -- 6 23
-    printResult "cal06-4.test.txt" -- 10 29
-    printResult "cal06-5.test.txt" -- 11 26
+    printResult "./data/cal06-1.test.txt" -- 7 | 19
+    printResult "./data/cal06-2.test.txt" -- 5 | 23
+    printResult "./data/cal06-3.test.txt" -- 6 | 23
+    printResult "./data/cal06-4.test.txt" -- 10 | 29
+    printResult "./data/cal06-5.test.txt" -- 11 | 26
     -- printResult "cal06-1.orig.txt"

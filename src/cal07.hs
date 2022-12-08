@@ -140,5 +140,5 @@ printResult file = do
 
 main = do
     -- Calculate and print result for each test file
-    printResult "cal07-1.test.txt" -- 95437
-    printResult "cal07-1.orig.txt"
+    printResult "./data/cal07-1.test.txt" -- 95437 | 24933642
+    printResult "./data/cal07-1.orig.txt"
