@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 day="$1"
 shift
 
