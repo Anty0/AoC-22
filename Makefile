@@ -13,13 +13,15 @@ SRCS = $(wildcard $(SRC_DIR)/*.hs)
 # Generate list of output files
 OUTS = $(patsubst $(SRC_DIR)/%.hs,$(OUT_DIR)/%,$(SRCS))
 
-.PHONY: all clean
-
-# Default target
+# Default target - build all scripts
 all: $(OUTS)
 
+# Remove all build files
 clean:
 	rm -r $(BUILD_DIR) $(OUT_DIR)
+
+# all and clean are not file targets
+.PHONY: all clean
 
 # Rule for building each script
 $(OUT_DIR)/%: $(SRC_DIR)/%.hs

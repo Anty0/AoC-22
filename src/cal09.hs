@@ -102,7 +102,7 @@ positionVisualization ((hx, hy), tail) pos@(x, y)
 
 -- 2D map visualization of simulation state
 stateVisualization :: (Position, Position) -> SimulationState -> String
-stateVisualization ((sx, sy), (ex, ey)) state = '\n' : (intercalate "\n" $ [[positionVisualization state (x, y) | x <- [sx..ex]] | y <- [sy..ey]])
+stateVisualization ((sx, sy), (ex, ey)) state = (intercalate "\n" $ [[positionVisualization state (x, y) | x <- [sx..ex]] | y <- [sy..ey]]) ++ ['\n']
     -- where ((sx, sy), (ex, ey)) = simulationBoundaries ((0, 0), (0, 0)) [state]
 
 -- print 2D map visualization of all simulation states
@@ -111,7 +111,7 @@ drawSimulation bounds = mapM (putStrLn . stateVisualization bounds)
 
 -- print 2D map of all visited positions
 drawVisited :: (Position, Position) -> Set.Set Position -> IO ()
-drawVisited ((sx, sy), (ex, ey)) positions = putStrLn $ intercalate "\n" $ [[if (x, y) `Set.member` positions then '#' else '.' | x <- [sx..ex]] | y <- [sy..ey]]
+drawVisited ((sx, sy), (ex, ey)) positions = putStrLn $ (intercalate "\n" $ [[if (x, y) `Set.member` positions then '#' else '.' | x <- [sx..ex]] | y <- [sy..ey]]) ++ ['\n']
 
 printResult file = do
     -- Reading file
@@ -120,7 +120,7 @@ printResult file = do
     -- Main logic
     let actions = parseInput contents
         -- Simulate actions starting from point (0, 0)
-        simulation = simulate actions (0, 0) (replicate 90 (0, 0))
+        simulation = simulate actions (0, 0) (replicate 9 (0, 0))
         -- Calculate boundaries of all visited points in simulation
         bounds = simulationBoundaries ((0, 0), (0, 0)) simulation
         -- Part #1 - list of all visited points by first tail
@@ -134,19 +134,16 @@ printResult file = do
     -- print actions
     -- print simulation
     -- print bounds
-    -- drawSimulation bounds simulation
-    -- putStrLn ""
+
+    putStrLn "Last state of simulation:"
+    drawSimulation bounds [last simulation]
     putStrLn "Visited by first tail:"
     drawVisited bounds $ Set.fromList visitedFirst
-    putStrLn ""
     putStrLn "Visited by last tail:"
     drawVisited bounds $ Set.fromList visitedLast
-    putStrLn ""
     putStrLn "Visited by any tail:"
     drawVisited bounds $ Set.fromList visitedAll
-    putStrLn ""
-    putStrLn $ "'" ++ file ++ "': '" ++ show (length visitedFirst) ++ "' | '" ++ show (length visitedLast) ++ "' | '" ++ show (length visitedAll) ++ "'"
-    putStrLn ""
+    putStrLn $ "'" ++ file ++ "': '" ++ show (length visitedFirst) ++ "' | '" ++ show (length visitedLast) ++ "' | '" ++ show (length visitedAll) ++ "'\n\n"
 
 main = do
     -- Calculate and print result for each test file
