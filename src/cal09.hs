@@ -21,7 +21,7 @@ data Action = AUp
             deriving (Show, Eq)
 
 
--- Convert line to set of actions
+-- Convert line to list of actions
 tokenize :: [String] -> [Action]
 tokenize ["U", n] = replicate (read n) AUp
 tokenize ["R", n] = replicate (read n) ARight
