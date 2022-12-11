@@ -7,7 +7,7 @@ import Data.List.Split (splitOn)
 
 -- Split into blocks by empty lines
 splitBlocks :: String -> [[String]]
-splitBlocks fileContents = splitOn [""] $ lines fileContents
+splitBlocks = splitOn [""] . lines
 
 
 -- Sum blocks as ints and sort them

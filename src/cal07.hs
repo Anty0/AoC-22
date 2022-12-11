@@ -105,7 +105,7 @@ dirSizes (TDirectory _ size trees) = size : concat (map dirSizes trees)
 
 -- Parse input and create filesystem root directory structure
 parseInput :: String -> DirTree
-parseInput input = makeRootTree $ readListing False [] $ map (tokenize.words) $ lines input
+parseInput = makeRootTree . readListing False [] . map (tokenize.words) . lines
 
 -- Sum of size of all directories with size smaller then sizeLimit
 resultPart1 :: DirTree -> Int

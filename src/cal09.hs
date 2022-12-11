@@ -57,7 +57,7 @@ tailActions (hx, hy) (tx, ty) = moveX ++ moveY
 
 -- Convert input string to list of actions for simulation
 parseInput :: String -> [Action]
-parseInput input = concat $ map (tokenize.words) $ lines input
+parseInput = concat . map (tokenize.words) . lines
 
 -- Move tail to correct for any head movement
 updateTail :: Position -> [Position] -> [Position]

@@ -50,7 +50,7 @@ correctRound (a, 'Z') = (a, winCh a)
 
 -- Split input into rounds
 splitRounds :: String -> [(Char, Char)]
-splitRounds fileContents = map (\[[a],[x]] -> (a,x)) $ map (splitOn " ") $ lines fileContents
+splitRounds = map (\[[a],[x]] -> (a,x)) . map (splitOn " ") . lines
 
 -- Calculate score of round
 roundScore :: (Char, Char) -> Int

@@ -18,7 +18,7 @@ tokenize ["addx", n] = [ONop, OAdd (read n)]
 
 -- Convert input string to list of operations for simulation
 parseInput :: (Read a) => String -> [Operation a]
-parseInput input = concat $ map (tokenize.words) $ lines input
+parseInput = concat . map (tokenize.words) . lines
 
 -- Apply operation to value
 applyOp :: (Num a) => Operation a -> a -> a
