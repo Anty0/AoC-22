@@ -1,7 +1,7 @@
 #!/usr/bin/env runhaskell
 
 import System.IO
-import Data.Array (Array, (!), listArray, indices, bounds)
+import Data.Array (Array, (!), listArray, indices)
 import Data.List (sortBy)
 import Data.List.Extra (headDef)
 import Data.Function (on)
