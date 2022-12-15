@@ -1,6 +1,6 @@
 # Compiler and flags
 HC = ghc
-HC_FLAGS = -dynamic -O3
+HC_FLAGS = -threaded -dynamic -O3
 
 # Directories
 SRC_DIR = src
