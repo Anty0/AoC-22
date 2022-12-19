@@ -1,7 +1,6 @@
 #!/usr/bin/env runhaskell
 
 import System.IO
-import Debug.Trace (trace)
 import Data.List (nub)
 import Data.List.Split (splitOn)
 import Data.Maybe (catMaybes)
