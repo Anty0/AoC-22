@@ -1,6 +1,5 @@
 #!/usr/bin/env runhaskell
 
-import System.IO
 import Data.List (insertBy, elemIndex, intercalate)
 import Data.Array (Array, (!), listArray, bounds)
 import Data.Char (ord, chr)

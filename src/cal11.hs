@@ -1,6 +1,5 @@
 #!/usr/bin/env runhaskell
 
-import System.IO
 import Data.List (groupBy, sortBy)
 import Data.List.Split (splitOn)
 import Data.Maybe (fromJust)

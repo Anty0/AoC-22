@@ -1,6 +1,5 @@
 #!/usr/bin/env runhaskell
 
-import System.IO
 import Data.List.Split (splitOn)
 import Data.List (intercalate, unfoldr)
 import Data.Tuple.Extra (dupe)

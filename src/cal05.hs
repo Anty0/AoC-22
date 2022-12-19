@@ -1,6 +1,5 @@
 #!/usr/bin/env runhaskell
 
-import System.IO
 -- import Debug.Trace (trace)
 import Data.List (transpose, replicate)
 import Data.Maybe (catMaybes)

@@ -1,6 +1,5 @@
 #!/usr/bin/env runhaskell
 
-import System.IO
 import Data.List (intercalate)
 import Data.List.Split (chunksOf)
 

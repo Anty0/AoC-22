@@ -1,7 +1,6 @@
 #!/usr/bin/env runhaskell
 
-import System.IO
-import Debug.Trace (traceShow)
+-- import Debug.Trace (traceShow)
 import Data.List (sort)
 import Data.List.Split (splitOn, chunksOf)
 import Data.Maybe (fromJust)

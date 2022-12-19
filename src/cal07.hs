@@ -1,6 +1,5 @@
 #!/usr/bin/env runhaskell
 
-import System.IO
 import Data.List (sortBy, sort, reverse)
 import Data.Function (on)
 

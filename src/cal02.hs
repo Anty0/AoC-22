@@ -1,6 +1,5 @@
 #!/usr/bin/env runhaskell
 
-import System.IO
 import Data.List.Split (splitOn)
 
 -- Score of played character

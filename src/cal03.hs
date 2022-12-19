@@ -1,6 +1,5 @@
 #!/usr/bin/env runhaskell
 
-import System.IO
 import Data.Char (ord)
 import Data.List (intersect)
 import Data.List.Split (chunksOf)
