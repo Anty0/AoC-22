@@ -174,14 +174,6 @@ valueBestScenario v speed availableRates = (
 valueWorstScenario :: Value -> Int
 valueWorstScenario v = valueCurrentFlowRate v * valueRemainingTime v + valueFlowReleased v
 
--- timeLimit :: Int
--- -- timeLimit = 30
--- timeLimit = 26
-
--- initialPositions :: IntMap.Key -> PriorityQueue Int Path
--- -- initialPositions start = foldr queueInsert Heap.empty [(timeLimit, [start])]
--- initialPositions start = foldr queueInsert Heap.empty [(-timeLimit, [start]), (-timeLimit, [start])] 
-
 -- Perform path search step optimizing for best score
 maximizePathSearchStep :: ValvesMap -> PathQueue -> Value -> Value
 maximizePathSearchStep valvesMap queue topValue
