@@ -93,7 +93,7 @@ printResult file = do
         countIndexes = [1000, 2000, 3000]
 
     -- Main logic
-    let -- Parse input to array of blueprints
+    let -- Parse input to a list of numbers
         numbersList = parseInput contents
 
         -- Part #1 - No multiplier, apply once
@@ -109,4 +109,4 @@ printResult file = do
 main = do
     -- Calculate and print result for each test file
     printResult "./data/cal20-1.test.txt" -- 3 | 1623178306
-    printResult "./data/cal20-1.orig.txt"
+    -- printResult "./data/cal20-1.orig.txt"
